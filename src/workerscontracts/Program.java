@@ -17,7 +17,7 @@ public class Program {
 		// Enter the worker's data 
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		
 		System.out.println("Enter department's name: ");
 		String departmentName = sc.nextLine();
@@ -35,7 +35,7 @@ public class Program {
 		int n = sc.nextInt();
 		
 		for(int i=0;i<n;i++) {
-			System.out.println("Enter contract #" +i+1+"data: "); // i starts at 0 while contracts starts at 1
+			System.out.println("Enter contract #" +(i+1)+ " "+"data: "); // i starts at 0 while contracts starts at 1
 			System.out.print("Date (DD/MM/YYYY): ");
 			Date contractDate = sdf.parse(sc.next());
 			System.out.println("Value per hour: ");
@@ -43,7 +43,7 @@ public class Program {
 			System.out.print("Duration (hours): ");
 			int hours = sc.nextInt();
 			HourContract contract = new HourContract(contractDate, valuePerHour, hours);
-			System.out.println("Contract value: " + contract.totalValue());
+			//System.out.println("Contract value: " + contract.totalValue());
 			worker.addContract(contract);
 			//System.out.println("Contract added: " + worker.getContracts());
 		}
